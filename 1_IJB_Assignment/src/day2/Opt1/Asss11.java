@@ -1,0 +1,21 @@
+package day2.Opt1;
+
+public class Asss11 {
+
+	//	Cho các ví dụ về ép kiểu mà độ chính xác không bị thay đổi, như thứ tự bên dưới:
+//		double -> float -> long -> int -> short -> byte	
+	public static void main(String[] args) {
+		double a = 100009200D;
+		float b = (float)a;
+		int z= (int)a;
+		System.out.println("Giá trị biến float sau khi ép từ double: "+b);
+		long c = (long)b;
+		System.out.println("Giá trị biến long sau khi ép từ float: "+c);
+		int d = (int)c;
+		System.out.println("Giá trị biến int sau khi ép từ long: "+d);
+		short e = (short)d;
+		System.out.println("Giá trị biến short sau khi ép từ int: "+e);
+		byte f = (byte)e;
+		System.out.println("Giá trị biến byte sau khi ép từ short: "+f);
+	}	
+}

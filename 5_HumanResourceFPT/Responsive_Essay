@@ -1,0 +1,81 @@
+4. Xác định Is A, Has A relationship:
+		-- Experience IS A Candidate
+		-- Fresher IS A Candidate
+		-- Intern IS A Candidate
+		
+		-- Object Candidate HAS A List<Certificate>
+		
+5. super, this:
+		super: dùng để từ một child class (Experience, Fresher, Intern) tham chiếu đến parent class Candidate  
+			-- Sử dụng để truy cập các propertive và method của parent class
+		
+		This: dùng để tham chiếu đến Object có thể được tạo ra từ chính Class đó. 
+		Nó thường được dùng để truy cập các propertive và method của Object.
+			-- muốn gọi một method của Object từ bên trong nó.
+			-- Access(Truy cập) các propertive và method của Object tạo contructor hoặc get set,
+			 phân biệt giữa các static variable and instance variable. 
+			 
+6. instanceof:
+		-- Sử dụng để kiểm tra một Object có là một thể hiện của một class nào đó hay không.
+		
+7. phân biệt giống và khác nhau giữa String và StringBuffer. 
+		-- Giống:  là một lớp trong gói java.lang, Đều làm việc với chuỗi ký tự.
+		-- Khác: 
+		 	String: là một lớp không thể thay đổi (immutable), có nghĩa là một khi một đối tượng String được tạo,
+		 	 	bạn không thể thay đổi nó.
+					Khi bạn thực hiện các phép toán như nối chuỗi, thay đổi chuỗi, hoặc cắt chuỗi, 
+				một đối tượng String mới sẽ được tạo ra.
+					Điều này có thể gây ra hiệu năng kém khi bạn thực hiện nhiều phép toán trên các chuỗi lớn hoặc trong vòng lặp.
+		
+			StringBuffer: là một lớp có thể thay đổi (mutable), 
+					có nghĩa là bạn có thể thay đổi nội dung của nó mà không cần tạo ra một đối tượng mới.
+					Khi bạn thực hiện các phép toán như nối chuỗi, thay đổi chuỗi, hoặc cắt chuỗi,
+					StringBuffer sẽ thay đổi trực tiếp nội dung của nó mà không cần tạo ra đối tượng mới.
+					Điều này làm cho StringBuffer hiệu quả hơn khi làm việc với các chuỗi lớn hoặc trong vòng lặp.
+		
+8.phân biệt các đặc tính của List, Set, Map
+		--List: List là một kiểu dữ liệu trong Java dùng để lưu trữ một danh sách các phần tử có thứ tự
+				Các phần tử trong List có thể trùng lặp và được sắp xếp theo thứ tự chúng được thêm vào
+				Các phương thức phổ biến của List bao gồm: add(), remove(), get(), size(), contains(), v.v.
+		--Set: Set là một kiểu dữ liệu trong Java dùng để lưu trữ một tập hợp các phần tử không có thứ tự.
+				Các phần tử trong Set là duy nhất, tức là không thể có các phần tử trùng lặp trong Set.		
+				Set không đảm bảo thứ tự của các phần tử.
+				Các phương thức phổ biến của Set bao gồm: add(), remove(), contains(), size(), isEmpty(), v.v.
+		--Map: Map là một kiểu dữ liệu trong Java dùng để lưu trữ các cặp key-value.
+				Mỗi key trong Map là duy nhất và được sử dụng để truy cập vào giá trị tương ứng.
+				Map không đảm bảo thứ tự của các cặp key-value.
+				Các phương thức phổ biến của Map bao gồm: put(), get(), remove(), containsKey(), containsValue(), size(), v.v.
+					
+9.Statement và PreparedStatement là hai interface trong Java được sử dụng để thực thi các câu lệnh SQL trong cơ sở dữ liệu.
+		--Statement:
+				Statement là một interface trong gói java.sql.
+				Statement được sử dụng để thực thi các câu lệnh SQL không tham số hoặc câu lệnh SQL đơn giản.
+				Khi sử dụng Statement, câu lệnh SQL được biên dịch và thực thi trực tiếp bởi cơ sở dữ liệu mỗi khi nó được gọi.
+				Statement có thể gây ra vấn đề bảo mật như SQL Injection nếu không được sử dụng cẩn thận.
+				
+		--PreparedStatement:
+				PreparedStatement là một interface trong gói java.sql.
+				PreparedStatement được sử dụng để thực thi các câu lệnh SQL có chứa tham số hoặc câu lệnh SQL phức tạp.
+				Khi sử dụng PreparedStatement, câu lệnh SQL được biên dịch một lần và sử dụng lại nhiều lần
+				với các giá trị tham số khác nhau.
+				PreparedStatement hỗ trợ các phương thức để gán giá trị cho các tham số, giúp tránh được SQL Injection.
+
+10. cơ chế quản lý của Connection Pool giúp cải thiện hiệu suất, 
+quản lý tài nguyên và khôi phục các lỗi kết nối trong ứng dụng truy cập cơ sở dữ liệu. 
+Điều này giúp tối ưu hóa việc truy cập cơ sở dữ liệu và đảm bảo ứng dụng hoạt động một cách hiệu quả và ổn định
+		
+		Tối ưu hiệu suất:duy trì một tập hợp các kết nối cơ sở dữ liệu sẵn sàng để sử dụng.
+
+		Quản lý tài nguyên:
+			Thông qua việc tái sử dụng kết nối, tránh việc tạo ra quá nhiều kết nối và làm quá tải cơ sở dữ liệu. 
+			có thể giới hạn số lượng kết nối cơ sở dữ liệu mà ứng dụng có thể sử dụng cùng một lúc, 
+			đảm bảo rằng tài nguyên được phân chia một cách hợp lý và không gây ra quá tải.
+
+		Quản lý lỗi và khôi phục:
+			Connection Pool cung cấp khả năng quản lý lỗi và khôi phục trong trường hợp xảy ra lỗi kết nối với cơ sở dữ liệu.
+			Khi một kết nối gặp lỗi, Connection Pool có thể loại bỏ kết nối đó khỏi Pool và tạo một kết nối mới để thay thế.
+			Điều này giúp đảm bảo rằng ứng dụng vẫn có thể tiếp tục hoạt động.
+
+
+
+

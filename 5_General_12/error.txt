@@ -1,0 +1,3 @@
+Line 4:  Co loi sai dinh dang StdPhone,  GradePoint
+Line 5:  Co loi sai dinh dang StdNo,  StdEmail
+Line 6:  Co loi sai dinh dang StdNo,  StdName,  StdEmail
